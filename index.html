@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Project Name - описание">
+  <!-- генерируйте favicon тут - https://realfavicongenerator.net/ -->
+  <!-- ! в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"-->
+  <!-- <link href="favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="favicon/site.webmanifest" rel="manifest" crossorigin="use-credentials">
+<link color="#c84659" href="favicon/safari-pinned-tab.svg" rel="mask-icon">
+<link href="favicon/favicon.ico" rel="shortcut icon">
+<meta content="#ffffff" name="msapplication-TileColor">
+<meta content="favicon/browserconfig.xml" name="msapplication-config">
+<meta content="#ffffff" name="theme-color">
+ -->
+  <!-- используйте только для шрифта находящегося на первом экране -->
+  <!-- <link rel="preload" href="fonts/placeholder.woff2" as="font" crossorigin="anonymous"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d7f796e6-b982-4f3a-9dae-e214d0513617&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src=" https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/jquery.inputmask.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/multi-select/0.9.12/js/jquery.multi-select.min.js" integrity="sha512-vSyPWqWsSHFHLnMSwxfmicOgfp0JuENoLwzbR+Hf5diwdYTJraf/m+EKrMb4ulTYmb/Ra75YmckeTQ4sHzg2hg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multi-select/0.9.12/css/multi-select.min.css" integrity="sha512-3lMc9rpZbcRPiC3OeFM3Xey51i0p5ty5V8jkdlNGZLttjj6tleviLJfHli6p8EpXZkCklkqNt8ddSroB3bvhrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>ProjectName — Главная</title>
+</head>
+
+<body>
+  <div style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="icon-close" viewBox="0 0 20 20">
+        <path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z" />
+      </symbol>
+    </svg>
+  </div>
+  <div class="wrapper">
+    <header class="header ">
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="" class="header__logo"><img src="./img/content/logo.png" alt=""></a>
+          <div class="header__body">
+            <div class="header__wrap">
+              <span class="header__text">группа компаний тсс</span>
+              <a href="" class="header__text-light">направления деятельности</a>
+            </div>
+            <div class="header__burger">
+              <div class="header__burger-item"></div>
+            </div>
+            <div class="header__mobile-menu">
+              <nav class="header__nav">
+                <ul class="header__nav-list">
+                  <li class="header__nav-item"><a href="">о компании</a></li>
+                  <li class="header__nav-item"><a href="">проекты</a></li>
+                  <li class="header__nav-item"><a href="">контакты</a></li>
+                </ul>
+              </nav>
+              <div class="header__socials">
+                <a href="" class="header__text --big">8 (495) 777-77-77</a>
+                <div class="header__info">
+                  <a href="" class="header__info-text"><img src="./img/svg/mail-icon-header.svg" alt="">info@tss.ru</a>
+                  <a href="" class="header__info-text"><img src="./img/svg/point-icon-header.svg" alt="">Москва</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="title">
+        <div class="container">
+          <div class="title__wrapper">
+            <!-- <div class="title__video">
+              <video src=""></video>
+            </div> -->
+            <img src="./img/content/title-bg.jpg" alt="" class="title__video">
+            <div class="title__overlay"></div>
+            <div class="title__text">
+              <div class="title__text-wrap">
+                <h1 class="title__header page-h1">техника <br> созидание <br> сервис</h1>
+                <a href="" class="title__link page-btn-transparent">узнать больше</a>
+              </div>
+            </div>
+            <div class="title__text">
+              <ul class="title__list">
+                <li class="title__item">
+                  <span class="title__list-header page-h1">30</span>
+                  <p class="title__list-text page-text-20">лет на рынке</p>
+                </li>
+                <li class="title__item">
+                  <span class="title__list-header page-h1">10 000</span>
+                  <p class="title__list-text page-text-20">производственных прощадей</p>
+                </li>
+                <li class="title__item">
+                  <span class="title__list-header page-h1">17 000</span>
+                  <p class="title__list-text page-text-20">реализованных проектов</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="directions">
+        <div class="container">
+          <div class="directions__wrapper">
+            <h2 class="directions__header page-h2">производственные направления</h2>
+            <ul class="directions__list">
+              <li class="directions__item">
+                <div class="directions__item-desc">
+                  <span class="directions__item-count">01</span>
+                  <h3 class="directions__item-header page-h3">Дизельные электростанции</h3>
+                  <p class="directions__item-text page-text-20">
+                    Дизель генератор производится в России,
+                    на мощностях собственного производственного комплекса ГК ТСС и предназначается для решения всего
+                    спектра вопросов, связанных
+                    с обеспечением резервного и основного энергоснабжения широкого круга объектов.
+                  </p>
+                  <a href="" class="directions__item-link page-btn">узнать больше</a>
+                </div>
+                <div class="directions__item-imgs">
+                  <img src="./img/content/direction-1.png" alt="">
+                  <img src="./img/content/direction-2.png" alt="">
+                  <img src="./img/content/direction-3.png" alt="">
+                </div>
+              </li>
+              <li class="directions__item">
+                <div class="directions__item-desc">
+                  <span class="directions__item-count">02</span>
+                  <h3 class="directions__item-header page-h3">Панельные блок-контейнеры</h3>
+                  <p class="directions__item-text page-text-20">
+                    ГК ТСС уже более 15 лет предлагает контейнерные решения для любого типа оборудования. Инжиниринговая
+                    служба готова разработать любой нестандартный контейнер,
+                    а производственная база позволяет произвести контейнер в сроки.
+                  </p>
+                  <a href="" class="directions__item-link page-btn">узнать больше</a>
+                </div>
+                <div class="directions__item-imgs">
+                  <img src="./img/content/direction-4.png" alt="">
+                  <img src="./img/content/direction-5.png" alt="">
+                  <img src="./img/content/direction-6.png" alt="">
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="contracts">
+        <div class="container">
+          <div class="contracts__wrapper">
+            <div class="contracts__desc">
+              <h2 class="contracts__header page-h2">инжиниринг,<br> когенерация,<br> проекты</h2>
+              <span class="contracts__subheader">Энерго-сервисные контракты</span>
+              <p class="contracts__text page-text-16">Реализация масштабных проектов на базе мощных ДЭС и газопоршневых
+                электростанций</p>
+              <a href="" class="contracts__link page-btn">узнать больше</a>
+            </div>
+            <img src="./img/content/contracts.jpg" alt="" class="contracts__img">
+          </div>
+        </div>
+      </section>
+      <section class="destribution">
+        <div class="container">
+          <div class="destribution__wrapper">
+            <h2 class="destribution__header page-h2">Эксклюзивная Дистрибуция</h2>
+            <ul class="destribution__list">
+              <li class="destribution__item">
+                <div class="destribution__icon"><img src="./img/content/distrib-1.png" alt=""></div>
+                <h3 class="destribution__subhead page-h3">Сварочное оборудование</h3>
+                <ul class="destribution__sublist">
+                  <li class="destribution__subitem page-text-16"><img src="./img/svg/check.svg" alt=""> Решают
+                    профессиональные и бытовые задачи по сварке металлов с максимальным качеством и без лишних затрат.
+                  </li>
+                  <li class="destribution__subitem page-text-16"><img src="./img/svg/check.svg" alt=""> Обеспечивают
+                    высокое качество по сварке и резке металлов в самых различных условиях.</li>
+                </ul>
+                <a href="" class="destribution__link page-btn-transparent">Узнать больше</a>
+              </li>
+              <li class="destribution__item">
+                <div class="destribution__icon"><img src="./img/content/distrib-2.png" alt=""></div>
+                <h3 class="destribution__subhead page-h3">Дизельные генераторы</h3>
+                <ul class="destribution__sublist">
+                  <li class="destribution__subitem page-text-16"><img src="./img/svg/check.svg" alt=""> Адаптированы к
+                    отечественному топливу и разнообразным климатическим условиям регионов нашей страны.</li>
+                  <li class="destribution__subitem page-text-16"><img src="./img/svg/check.svg" alt=""> Предназначены
+                    для обеспечения резервного и основного энергоснабжения.</li>
+                </ul>
+                <a href="" class="destribution__link page-btn-transparent">Узнать больше</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="production">
+        <div class="container">
+          <div class="production__wrapper">
+            <h2 class="production__header page-h2">Направления продукции ТсС</h2>
+            <ul class="production__list">
+              <li class="production__item">
+                <span class="production__count">01</span>
+                <h3 class="production__subhead page-h3">Строительное оборудование</h3>
+                <div class="production__img"><img src="./img/content/production-1.png" alt=""></div>
+                <p class="production__text">
+                  Линейки современных, эффективных
+                  и конкурентных по стоимости изделий, предназначенных для строительства зданий и дорог.
+                  <br><br>
+                  Виброплиты и резчики швов, заглаживающие машины и глубинные вибраторы, отбойные молотки и станки гибки
+                  арматуры – всё это техника созидания и строительства, доступная отечественным заказчикам и имеющая
+                  оптимальные гарантийные сроки.
+                </p>
+                <a href="" class="production__link page-btn-transparent">узнать больше</a>
+              </li>
+              <li class="production__item">
+                <span class="production__count">02</span>
+                <h3 class="production__subhead page-h3">Сварочное оборудование</h3>
+                <div class="production__img"><img src="./img/content/production-2.png" alt=""></div>
+                <p class="production__text">
+                  Сварочные аппараты ТСС – решение профессиональных и бытовых задач по сварке металлов, с максимальным
+                  качеством и без лишних затрат.
+                  <br><br>
+                  Эти неприхотливые изделия трудятся во многих автосервисах, на строительных площадках и в сфере ЖКХ,
+                  обеспечивая высокое качество по сварке и резке металлов в самых различных условиях.
+                </p>
+                <a href="" class="production__link page-btn-transparent">узнать больше</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="interactive">
+        <div class="container">
+          <div class="interactive__wrapper">
+            <h2 class="interactive__header page-h2">Филиалы, склады, представительства,</h2>
+            <ul class="interactive__list">
+              <li class="interactive__item">
+                <span class="interactive__list-num">7</span>
+                <span class="interactive__list-text page-text-20">филиалов</span>
+              </li>
+              <li class="interactive__item">
+                <span class="interactive__list-num">70+</span>
+                <span class="interactive__list-text page-text-20">сервисных центров</span>
+              </li>
+              <li class="interactive__item">
+                <span class="interactive__list-num">100+</span>
+                <span class="interactive__list-text page-text-20">официальных дилеров</span>
+              </li>
+            </ul>
+            <div class="interactive__form">
+              <div class="interactive__form-col">
+                <span class="interactive__form-header">Тип предприятия</span>
+                <div class="interactive__form-wrap">
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Филиал</span>
+                  </label>
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Сервисный центр</span>
+                  </label>
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Дилер</span>
+                  </label>
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Любое</span>
+                  </label>
+                </div>
+              </div>
+              <div class="interactive__form-col">
+                <span class="interactive__form-header">Страна</span>
+                <div class="interactive__form-wrap">
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Россия</span>
+                  </label>
+                  <label class="interactive__form-label">
+                    <input type="checkbox" class="interactive__form-check">
+                    <div class="interactive__form-custom-check"></div>
+                    <span>Казахстан</span>
+                  </label>
+                </div>
+              </div>
+              <div class="interactive__form-col">
+                <span class="interactive__form-header">Город</span>
+                <div class="interactive__form-wrap">
+                  <select name="" id="interactive__form-city" multiple="multiple" size="5" class="interactive__form-select">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="interactive__map" id="interactive__map"></div>
+      </section>
+      <section class="service">
+        <div class="container">
+          <div class="service__wrapper">
+            <h2 class="service__header page-h2">сервис и техобслуживание</h2>
+            <p class="service__text page-text-16">
+              Сервисная служба ГК ТСС производит весь спектр работ, связанных с
+              техническим обслуживанием дизельных генераторов (ДГУ) и обладает в этой области обширным опытом и
+              необходимыми ресурсами.
+            </p>
+            <div class="service__img"><img src="./img/content/service.jpg" alt=""></div>
+            <a href="" class="service__link page-btn">узнать больше</a>
+          </div>
+        </div>
+      </section>
+      <section class="materials">
+        <div class="container">
+          <div class="materials__wrapper">
+            <h2 class="materials__header page-h2">расходные материалы и запчасти</h2>
+            <div class="materials__body">
+              <div class="materials__text">
+                <p class="page-text-20">
+                  Любое оборудование нуждается
+                  в периодическом техническом обслуживании и замене компонентов, чей ресурс подошёл к концу.
+                </p>
+                <p class="page-text-16">
+                  Мы поможем подобрать запасные части для всего спектра изделий ТСС, актуальных и моделей, которые производились ранее. Купить запчасти для дизельных генераторов или строительного оборудования можно непосредственно на страницах нашего каталога.
+                </p>
+                <a href="" class="materials__link page-btn-transparent">узнать больше</a>
+              </div>
+              <div class="materials__img"><img src="./img/content/materials.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="container">
+        <p><a href="#" data-open-modal="feedback">modal--feedback link</a></p>
+        <p><a href="#" data-open-modal="success">modal--success link</a></p>
+      </div> -->
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <a href="" class="footer__logo"><img src="./img/content/logo-footer.png" alt=""></a>
+          <div class="footer__body">
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li class="footer__item"><a href="">о компании</a></li>
+                <li class="footer__item"><a href="">проекты</a></li>
+                <li class="footer__item"><a href="">контакты</a></li>
+              </ul>
+            </nav>
+            <div class="footer__socials">
+              <a href="" class="footer__phone">8 (495) 777-77-77</a>
+              <div class="footer__info">
+                <a href="" class="footer__mini"><img src="./img/svg/mail-icon-header.svg" alt="">info@tss.ru</a>
+                <a href="" class="footer__mini"><img src="./img/svg/point-icon-header.svg" alt="">Москва</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal modal--preload    " data-modal="feedback">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="mymodal-wrapper">
+            <div class="mymodal__headline">
+              <span class="mymodal__header">Обратный звонок</span>
+              <p class="mymodal__text page-text-18">Оставьте ваш контактный номер и специалист перезвонит в ближайшее время.</p>
+            </div>
+            <form action="" class="mymodal__form">
+              <div class="mymodal__from-wrap">
+                <input type="phone" required class="mymodal__field">
+              </div>
+              <div class="mymodal__form-bottom">
+                <button class="mymodal__submit page-btn-black">Отправить</button>
+                <span class="mymodal__terms page-text-18">Нажимая кнопку, я даю согласиена обработку <a href="">персональных данных</a></span>
+              </div>
+            </form>
+          </div>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload    " data-modal="good">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="mymodal-wrapper">
+            <div class="mymodal__headline">
+              <span class="mymodal__header">Заявка на Щебень 4-8</span>
+              <p class="mymodal__text page-text-24">Заполните короткую форму, специалиста свяжется с вами в ближайшее время и уточнит детали.</p>
+            </div>
+            <form action="" class="mymodal__form">
+              <div class="mymodal__from-wrap --grid">
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Ваше имя:</span>
+                  <input type="text" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Город:</span>
+                  <input type="text" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Контактный номер:</span>
+                  <input type="phone" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Email:</span>
+                  <input type="email" required class="mymodal__field">
+                </label>
+              </div>
+              <div class="mymodal__form-bottom">
+                <button class="mymodal__submit page-btn-black">Отправить</button>
+                <span class="mymodal__terms page-text-18">Нажимая кнопку, я даю согласиена обработку <a href="">персональных данных</a></span>
+              </div>
+            </form>
+          </div>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload    " data-modal="vacancy">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="mymodal-wrapper">
+            <div class="mymodal__headline">
+              <span class="mymodal__header">Заявка на Щебень 4-8</span>
+            </div>
+            <form action="" class="mymodal__form">
+              <div class="mymodal__from-wrap --grid-shitty">
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Ваше ФИО:</span>
+                  <input type="text" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Контактный номер:</span>
+                  <input type="phone" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Email:</span>
+                  <input type="email" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Комментарий:</span>
+                  <input type="text" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Добавьте ссылку на резюме:</span>
+                  <input type="text" required class="mymodal__field">
+                </label>
+                <label class="mymodal__from-label">
+                  <span class="page-text-18">Или загрузите файл до 2мб:</span>
+                  <input type="file" required class="mymodal__file">
+                  <div class="mymodal__file-custom-file page-btn-black"><img src="./img/svg/upload.svg" alt="">Загрузить резюме</div>
+                  <div class="mymodal__file-info">
+                    <div>
+                      <span class="page-text-18 file-name">Adnrew_resume.doc</span>
+                      <!-- <span class="page-text-18">[ Загружено, 455kb ]</span> -->
+                    </div>
+                    <div class="mymodal__file-clear">
+                      <svg width="15" height="15">
+                        <use xlink:href="#icon-close"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div class="mymodal__form-bottom">
+                <button class="mymodal__submit page-btn-black">Отправить</button>
+                <span class="mymodal__terms page-text-18">Нажимая кнопку, я даю согласиена обработку <a href="">персональных данных</a></span>
+              </div>
+            </form>
+          </div>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload   modal--fit-content   modal--no-scale   modal--some-mod " data-modal="success">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="mymodal-wrapper">
+            <div class="mymodal__headline">
+              <span class="mymodal__header">Заявка принята</span>
+              <p class="mymodal__text page-text-24">
+                Андрей, спасибо за обращение!
+                Ваша заявка принята, в ближайшее время наш менеджер свяжется с вами.
+              </p>
+            </div>
+          </div>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
