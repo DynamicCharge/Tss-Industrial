@@ -1559,6 +1559,17 @@ body {
 .title {
   position: relative;
   color: #fff;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: end;
 }
 
 .title__wrapper {
@@ -2047,6 +2058,71 @@ body {
   margin-right: 13px;
 }
 
+.interactive .interactive__form-bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.interactive .interactive__form-bullet {
+  padding: 4px 10px 7px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #133859;
+  color: #133859;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  /* 20.8px */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.interactive .interactive__form-bullet:not(:last-child) {
+  margin-bottom: 11px;
+}
+
+.interactive .delete-bullet {
+  background: transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  padding: 0;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+}
+
 .interactive .interactive__map {
   height: 539px;
 }
@@ -2113,7 +2189,7 @@ body {
 .interactive .ms-options-wrap > .ms-options > ul label.focused,
 .interactive .ms-options-wrap > .ms-options > ul label:hover {
   background: transparent !important;
-  border: none;
+  border-color: transparent !important;
   outline: none;
 }
 
@@ -2569,6 +2645,12 @@ body {
 @media screen and (max-width: 992px) {
   .breadcrumbs {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  .title {
+    height: auto;
   }
 }
 
