@@ -700,6 +700,8 @@ button,
   -ms-flex-align: start;
   align-items: start;
   margin-left: 89px;
+  position: relative;
+  top: 15px;
 }
 
 .header .header__text {
@@ -2309,6 +2311,11 @@ body {
 @media screen and (max-width: 1180px) {
   .directions .directions__item-count {
     font-size: 90px;
+  }
+
+  .header .header__body {
+    position: static;
+    top: 0;
   }
 
   .header .header__wrapper {
